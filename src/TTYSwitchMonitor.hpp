@@ -16,7 +16,7 @@ public:
 signals:
     void ttySwitch(bool sleep);
 
-public slots:
+private slots:
     void handlePrepareForSleep(bool sleep);
 
 private:

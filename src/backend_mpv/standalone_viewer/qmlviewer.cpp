@@ -13,7 +13,9 @@ int main(int argc, char **argv)
 		std::cerr << "usage: "+ std::string(argv[0]) +" <video file>\n";
 		return 1;
 	}
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 	QCoreApplication::setAttribute(Qt::AA_DisableHighDpiScaling);
+#endif
     QGuiApplication app(argc, argv);
 	qmlRegisterType<mpv::MpvObject>("mpvtest", 1, 0, "MpvObject");
 	setlocale(LC_NUMERIC, "C");
